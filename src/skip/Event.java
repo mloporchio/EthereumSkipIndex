@@ -10,9 +10,11 @@ import java.util.Objects;
  * where <code>address</code> is the address of the triggering contract
  * and <code>signature</code> is the Keccak-256 digest of the event signature.
  * 
- * @author Anonymous
+ * @author Matteo Loporchio
  */
 public class Event implements Serializable {
+    private static final long serialVersionUID = 1L;
+
     /**
      * Size of an Ethereum address (in bytes).
      */

@@ -18,8 +18,9 @@ import java.util.function.BiPredicate;
  *  <li><code>storageDb</code>: path of the chain storage database;</li>
  *  <li><code>queryFile</code>: path of the CSV file containing the queries to be performed;</li>
  *  <li><code>resultFile</code>: path of output CSV file with the results;</li>
- *  <li><code>indexDb</code>: path of the chain index database;</li>
- *  <li><code>indexDb</code>: path of the chain index database;</li>
+ *  <li><code>contract</code>: address of the contract triggering the event (must be a hex string with a <code>0x</code> prefix);</li>
+ *  <li><code>eventSignature</code>: hash of the event signature (must be a hex string with a <code>0x</code> prefix);</li>
+ *  <li><code>membership</code>: procedure to be used for testing whether an event is included in a Bloom filter (must be either <code>default</code> or <code>extended</code>);</li>
  * </ol>
  * 
  * The program outputs a CSV file containing the results of the experiment.

@@ -48,49 +48,55 @@ The experiments have been executed on the following hardware.
 
 To build all Java classes with ease, you can use the supplied makefile. Just open a terminal in the current folder and type <code>make</code>. 
 
-<!--If the <code>make</code> utility is not available in your system, it is sufficient to type the following command:
+If the <code>make</code> utility is not available in your system, typing the following command from the root directory of the repository should be sufficient.
 
-<code>javac -cp ".:lib/*" *.java</code>-->
+<code>javac -cp ".:./lib/\*" src/skip/\*.java -d bin/</code>
+
+### Javadoc
+
+To generate Javadoc for the source code, you can use the supplied makefile. Type <code>make doc</code> and the documentation will be placed in the <code>doc</code> folder of the repository. If <code>make</code> is not available, type the following command:
+
+<code>javadoc -cp ".:./lib/\*" src/skip/\*.java -d doc/</code>
 
 ## How to run
 
 This section contains the instructions needed to reproduce the experiments presented in the paper.
 The results of our experiments are reported in Sections 8.1, 8.2 and 8.3 of the paper. The suggested order for running the experiments aligns with the order in which they are presented in the paper.
 
-1. **Important**. First, make sure you have all the downloaded files from the Zenodo repository in the <code>data</code> folder.
+1. **Important**. First, make sure you have all the downloaded files from the Zenodo repository in the <code>data</code> folder. Also, make sure that you have extracted the required compressed files as described <a href="https://doi.org/10.5281/zenodo.7957140">here</a>.
 
 2. **Filter analysis**. To obtain all results of Section 8.1, open the  <code>filters.ipynb</code> notebook and execute all cells. This should create 4 output plots (i.e., Figure 5 in the paper) that will be placed in the <code>pictures</code> folder. The plots are as follows.
 
     | File | Description |
     |---|---|
-    | <code>dist_ones.pdf</code> | Plot of Figure 5(a) |
-    | <code>temporal_ones.pdf</code> | Plot of Figure 5(b) |
-    | <code>dist_keys.pdf</code> | Plot of Figure 5(c) |
-    | <code>temporal_keys.pdf</code> | Plot of Figure 5(d) |
+    | <code>pictures/dist_ones.pdf</code> | Plot of Figure 5(a) |
+    | <code>pictures/temporal_ones.pdf</code> | Plot of Figure 5(b) |
+    | <code>pictures/dist_keys.pdf</code> | Plot of Figure 5(c) |
+    | <code>pictures/temporal_keys.pdf</code> | Plot of Figure 5(d) |
 
 3. **Index analysis**. To obtain all results of Section 8.2, open the <code>skip.ipynb</code> notebook and execute all cells. This should create 5 output plots and 2 CSV files containing queries for the simulation. Plots will be placed in the <code>pictures</code>, while CSV files will be saved in the <code>data</code> directory.
 
     | File | Description |
     |---|---|
-    | <code>bf-sparse.pdf</code> | Plot of Figure 6(a) |
-    | <code>bf-normal.pdf</code> | Plot of Figure 6(b) |
-    | <code>bf-saturated.pdf</code> | Plot of Figure 6(c) |
-    | <code>cryptokitties_frequency_cumul.pdf</code> | Plot of Figure 7(a) |
-    | <code>cryptokitties_frequency_perc.pdf</code> | Plot of Figure 7(b) |
-    | <code>queries_birth.csv</code> | Data set of queries for the Birth event |
-    | <code>queries_transfer.csv</code> | Data set of queries for the Transfer event |
+    | <code>pictures/bf-sparse.pdf</code> | Plot of Figure 6(a) |
+    | <code>pictures/bf-normal.pdf</code> | Plot of Figure 6(b) |
+    | <code>pictures/bf-saturated.pdf</code> | Plot of Figure 6(c) |
+    | <code>pictures/cryptokitties_frequency_cumul.pdf</code> | Plot of Figure 7(a) |
+    | <code>pictures/cryptokitties_frequency_perc.pdf</code> | Plot of Figure 7(b) |
+    | <code>data/queries_birth.csv</code> | Data set of queries for the Birth event |
+    | <code>data/queries_transfer.csv</code> | Data set of queries for the Transfer event |
 
-4. **Query analysis**. Execute the following commands starting from the main directory of the repository. Notice that the execution of the Bash scripts may take some time, as they perform intensive computations on a data set of 1 million Ethereum blocks.
+4. **Query analysis**. Once the query data sets have been generated, you can execute the following commands starting from the main directory of the repository. Notice that the execution of the Bash scripts may take some time, as they perform intensive computations (e.g., index construction and multiple query simulations) on a data set of 1 million Ethereum blocks.
 
     1. Run <code>build_filters.sh</code> to build the Bloom filters for the entire data set.
     3. Run <code>build_index.sh</code> to construct the BF skip index.
     3. Run <code>build_storage.sh</code> to construct the event storage database.
     4. Run <code>test_query.sh</code> to launch the query simulation procedure.
-    5. Open the <code>query.ipynb</code> notebook and execute all cells.
+    5. Open the <code>query.ipynb</code> notebook and execute all cells. This will analyze the results of the previous steps.
 
     <br>
 
-    These steps should create the following output files and directories.
+    These steps should create the following output files and directories. Note that the BF skip indexes of all blocks are stored in LevelDB key-value databases. The four plots created in the <code>pictures</code> constitute the content of Figure 8.
 
     | File | Description |
     |---|---|

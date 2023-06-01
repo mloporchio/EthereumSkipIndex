@@ -1,6 +1,6 @@
 .ipynb_checkpoints/
 .DS_Store
 bin/
-data/
-pictures/
-*.ipynb
+data/*.csv
+data/*.xz
+pictures/*.pdf

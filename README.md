@@ -15,7 +15,7 @@ The BF skip index was implemented taking the Ethereum blockchain as a reference.
 
 ## Data
 
-Due to space constraints, all data needed to reproduce the results is stored in <a href="#">this</a> Zenodo repository. Before running the experiments, all downloaded files should be placed in the <code>data</code> folder of this GitHub repository. 
+Due to space constraints, all data needed to reproduce the results is stored in <a href="https://doi.org/10.5281/zenodo.7957140">this Zenodo repository</a>. Before running the experiments, all downloaded files should be placed in the <code>data</code> folder of this GitHub repository. 
 
 The linked Zenodo repository also includes a detailed description of the data set and its structure.
 
@@ -33,21 +33,83 @@ The code was tested using the following software and libraries, which are requir
     - Matplotlib (v. 3.6.2)
     - SciPy (v. 1.9.3)
 
+
+### Hardware
+
+The experiments have been executed on the following hardware.
+
+- The Java code has been tested on a machine running Ubuntu Linux, with an 8-core Intel Xeon 5218 CPU @ 2.3 GHz and 256 GB of RAM.
+
+- The data analysis with Jupyter Notebooks has been carried out on an Apple MacBook Air with a dual-core Intel i7 CPU @ 1.7 GHz and 8 GB of RAM.
+
+**Important:** to run the Java simulations we recommend at least 150 GB of free disk space.
+
 ## How to compile
 
-To build all Java classes with ease, you can use the supplied makefile. Just open a terminal in the current folder and type <code>make</code>.
-<!-- If the <code>make</code> utility is not available in your system, it is sufficient to type the following command:
+To build all Java classes with ease, you can use the supplied makefile. Just open a terminal in the current folder and type <code>make</code>. 
 
-<code>javac -cp ".:lib/*" *.java</code> -->
+<!--If the <code>make</code> utility is not available in your system, it is sufficient to type the following command:
+
+<code>javac -cp ".:lib/*" *.java</code>-->
 
 ## How to run
 
 This section contains the instructions needed to reproduce the experiments presented in the paper.
+The results of our experiments are reported in Sections 8.1, 8.2 and 8.3 of the paper. The suggested order for running the experiments aligns with the order in which they are presented in the paper.
 
-TODO
+1. **Important**. First, make sure you have all the downloaded files from the Zenodo repository in the <code>data</code> folder.
+
+2. **Filter analysis**. To obtain all results of Section 8.1, open the  <code>filters.ipynb</code> notebook and execute all cells. This should create 4 output plots (i.e., Figure 5 in the paper) that will be placed in the <code>pictures</code> folder. The plots are as follows.
+
+    | File | Description |
+    |---|---|
+    | <code>dist_ones.pdf</code> | Plot of Figure 5(a) |
+    | <code>temporal_ones.pdf</code> | Plot of Figure 5(b) |
+    | <code>dist_keys.pdf</code> | Plot of Figure 5(c) |
+    | <code>temporal_keys.pdf</code> | Plot of Figure 5(d) |
+
+3. **Index analysis**. To obtain all results of Section 8.2, open the <code>skip.ipynb</code> notebook and execute all cells. This should create 5 output plots and 2 CSV files containing queries for the simulation. Plots will be placed in the <code>pictures</code>, while CSV files will be saved in the <code>data</code> directory.
+
+    | File | Description |
+    |---|---|
+    | <code>bf-sparse.pdf</code> | Plot of Figure 6(a) |
+    | <code>bf-normal.pdf</code> | Plot of Figure 6(b) |
+    | <code>bf-saturated.pdf</code> | Plot of Figure 6(c) |
+    | <code>cryptokitties_frequency_cumul.pdf</code> | Plot of Figure 7(a) |
+    | <code>cryptokitties_frequency_perc.pdf</code> | Plot of Figure 7(b) |
+    | <code>queries_birth.csv</code> | Data set of queries for the Birth event |
+    | <code>queries_transfer.csv</code> | Data set of queries for the Transfer event |
+
+4. **Query analysis**. Execute the following commands starting from the main directory of the repository. Notice that the execution of the Bash scripts may take some time, as they perform intensive computations on a data set of 1 million Ethereum blocks.
+
+    1. Run <code>build_filters.sh</code> to build the Bloom filters for the entire data set.
+    3. Run <code>build_index.sh</code> to construct the BF skip index.
+    3. Run <code>build_storage.sh</code> to construct the event storage database.
+    4. Run <code>test_query.sh</code> to launch the query simulation procedure.
+    5. Open the <code>query.ipynb</code> notebook and execute all cells.
+
+    <br>
+
+    These steps should create the following output files and directories.
+
+    | File | Description |
+    |---|---|
+    | <code>data/filters_8K</code> | Binary file containing all Bloom filters |
+    | <code>data/filters_8K_m</code> | Binary file containing all modified Bloom filters |
+    | <code>data/index_8K_7</code> | Directory of the BF skip index LevelDB database |
+    | <code>data/index_8K_7_m</code> | Directory of the BF skip index LevelDB database (with modified filters) |
+    | <code>data/storage</code> | Directory of the event storage LevelDB database |
+    | <code>data/queries_birth_res.csv</code> | Results of queries for the Birth event |
+    | <code>data/queries_birth_res_m.csv</code> | Results of queries for the Birth event (with modified filters) |
+    | <code>data/queries_transfer_res.csv</code> | Results of queries for the Transfer event |
+    | <code>data/queries_transfer_res_m.csv</code> | Results of queries for the Transfer event (with modified filters) |
+    | <code>pictures/query_birth.pdf</code> | Plot of Figure 8(a) |
+    | <code>pictures/query_transfer.pdf</code> | Plot of Figure 8(b) |
+    | <code>pictures/query_birth_m.pdf</code> | Plot of Figure 8(c) |
+    | <code>pictures/query_transfer_m.pdf</code> | Plot of Figure 8(d) |
 
 ## References
 
-1. Anonymous authors. "Paper title."
+1. Loporchio, Matteo et al. "Paper title."
 2. Bloom, Burton H. "Space/time trade-offs in hash coding with allowable errors." Communications of the ACM 13.7 (1970): 422-426.
 3. Wood, Gavin. "Ethereum: A secure decentralised generalised transaction ledger." Ethereum project yellow paper 151.2014 (2014): 1-32.

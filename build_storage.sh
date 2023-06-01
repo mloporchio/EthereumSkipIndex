@@ -9,4 +9,8 @@
 #   NOTICE: the execution of this script may take some time.
 #
 
-java -cp "bin:lib/*" skip.ChainStorageBuilder data/events data/storage
+CLASS="skip.ChainStorageBuilder"
+EVENTS_FILE="data/events"
+STORAGE_DB="data/storage"
+
+java -cp "bin:lib/*" ${CLASS} ${EVENTS_FILE} ${STORAGE_DB}

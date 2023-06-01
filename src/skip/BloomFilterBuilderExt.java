@@ -20,7 +20,7 @@ import java.io.FileOutputStream;
  * 
  * <ol>
  *  <li><code>keysFile</code>: path of the keys file containing unique block keys.</li>
- *  <li><code>keysFile</code>: path of the events file containing unique event occurrences.</li>
+ *  <li><code>eventsFile</code>: path of the events file containing unique event occurrences.</li>
  *  <li><code>outputFile</code>: path of the output file (filter file) containing Bloom filters for the blocks.</li>
  *  <li><code>filterSize</code>: size of each Bloom filter (expressed in bytes).</li>
  * </ol>

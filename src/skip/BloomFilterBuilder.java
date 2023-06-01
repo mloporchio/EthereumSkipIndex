@@ -11,7 +11,7 @@ import java.io.FileOutputStream;
 /**
  * This program reads a binary file containing a list of keys 
  * and outputs a binary file with a list of Bloom filters.
- * The output file includes one Bloom filter for each block included in the input file.
+ * The output file includes one Bloom filter for each block in the input file.
  * Each filter summarizes the keys included in the corresponding block.
  * 
  * The inputs of this program are as follows:

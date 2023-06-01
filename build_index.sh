@@ -12,8 +12,11 @@
 #   NOTICE: the execution of this script may take some time.
 #
 
+CLASS="skip.ChainIndexBuilder"
+NUM_ENTRIES=7
+
 # Build index with standard filters.
-java -cp "bin:lib/*" skip.ChainIndexBuilder data/filters_8K data/index_8K_7 7
+java -cp "bin:lib/*" ${CLASS} data/filters_8K data/index_8K_7 ${NUM_ENTRIES}
 
 # Build index with modified filters.
-java -cp "bin:lib/*" skip.ChainIndexBuilder data/filters_8K_m data/index_8K_7_m 7
+java -cp "bin:lib/*" ${CLASS} data/filters_8K_m data/index_8K_7_m ${NUM_ENTRIES}

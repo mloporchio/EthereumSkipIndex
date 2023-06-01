@@ -12,8 +12,12 @@
 #   NOTICE: the execution of this script may take some time.
 #
 
+KEYS_FILE="data/keys"
+EVENTS_FILE="data/events"
+FILTER_SIZE=8192
+
 # Build standard filters.
-java -cp "bin:lib/*" skip.BloomFilterBuilder data/filters_8K data/index_8K_7 7
+java -cp "bin:lib/*" skip.BloomFilterBuilder ${KEYS_FILE} data/filters_8K ${FILTER_SIZE}
 
 # Build modified filters.
-java -cp "bin:lib/*" skip.BloomFilterBuilderExt data/filters_8K_m data/index_8K_7_m 7
+java -cp "bin:lib/*" skip.BloomFilterBuilderExt ${KEYS_FILE} ${EVENTS_FILE} data/filters_8K_m ${FILTER_SIZE}

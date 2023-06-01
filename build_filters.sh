@@ -3,8 +3,8 @@
 #   File:   build_filters.sh
 #   Author: Matteo Loporchio
 #
-#   Bash script for constructing Bloom filters for each block in the data set.
-#   We construct filters with a size of 8 KiB (i.e., 8192 bytes) each.
+#   This Bash script constructs Bloom filters for each block in the data set.
+#   Filters have a size of 8 KiB (i.e., 8192 bytes) each.
 #   This script also constructs modified Bloom filters 
 #   (i.e., Bloom filters recording also the concatenation between contract address
 #   and event signature hash for more accurate searches).

@@ -3,4 +3,5 @@
 bin/
 data/*.csv
 data/*.xz
+doc/
 pictures/*.pdf

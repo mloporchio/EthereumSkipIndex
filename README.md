@@ -19,9 +19,13 @@ Due to space constraints, all data needed to reproduce the results is stored in 
 
 The linked Zenodo repository also includes a detailed description of the data set and its structure.
 
-## Requirements
+## Documentation
 
-The entire project was implemented using Java and Python. Specifically, all code for constructing Bloom filters, BF skip indexes, and for the simulation of  search algorithms was written in Java. Python was used for query generation and result analysis. In particular, Jupyter Notebooks were used to produce and visualize the results interactively.
+The entire project was implemented using Java and Python. Specifically, all code for constructing Bloom filters, BF skip indexes, and for the simulation of search algorithms was written in Java. Python was used for query generation and result analysis. In particular, Jupyter Notebooks were used to produce and visualize the results interactively.
+
+The Javadoc for all Java sources is available <a href="https://pages.di.unipi.it/loporchio/doc/EthSkip/">here</a>. The same documentation can also be generated as discussed in the [Javadoc](###Javadoc) section.
+
+## Requirements
 
 The code was tested using the following software and libraries, which are required for reproducing all experiments.
 
@@ -114,8 +118,10 @@ The results of our experiments are reported in Sections 8.1, 8.2 and 8.3 of the 
     | <code>pictures/query_birth_m.pdf</code> | Plot of Figure 8(c) |
     | <code>pictures/query_transfer_m.pdf</code> | Plot of Figure 8(d) |
 
+5. **Inter-block time**. The <code>time.ipynb</code> notebook contains the calculations for deriving the average inter-block time discussed in Section 8.2.
+
 ## References
 
-1. Loporchio, Matteo et al. "Paper title."
+1. Loporchio, Matteo, et al. "Skip index: supporting efficient inter-block queries and query authentication on the blockchain." (2023).
 2. Bloom, Burton H. "Space/time trade-offs in hash coding with allowable errors." Communications of the ACM 13.7 (1970): 422-426.
 3. Wood, Gavin. "Ethereum: A secure decentralised generalised transaction ledger." Ethereum project yellow paper 151.2014 (2014): 1-32.

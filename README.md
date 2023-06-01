@@ -37,7 +37,7 @@ The code was tested using the following software and libraries, which are requir
     - Matplotlib (v. 3.6.2)
     - SciPy (v. 1.9.3)
 
-The Java implementation depends on the following libraries (already included in the <code>lib</code>).
+The Java implementation depends on the following libraries (already included in the <code>lib</code> folder).
 
 - Google Guava (v. 31.1)
 - LevelDB JNI (v. 1.8)

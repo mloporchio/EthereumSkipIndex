@@ -23,7 +23,7 @@ The linked Zenodo repository also includes a detailed description of the data se
 
 The entire project was implemented using Java and Python. Specifically, all code for constructing Bloom filters, BF skip indexes, and for the simulation of search algorithms was written in Java. Python was used for query generation and result analysis. In particular, Jupyter Notebooks were used to produce and visualize the results interactively.
 
-The Javadoc for all Java sources is available <a href="https://pages.di.unipi.it/loporchio/doc/EthSkip/">here</a>. The same documentation can also be generated as discussed in the [Javadoc](###Javadoc) section.
+The Javadoc for all Java sources can be generated as discussed in the [Javadoc](###Javadoc) section.
 
 ## Requirements
 

@@ -4,4 +4,4 @@ After running all experiments, this folder should contain all plots presented in
 
 ## References
 
-1. Loporchio, Matteo, et al. "Skip index: supporting efficient inter-block queries and query authentication on the blockchain." (2023).
+1. Anonymous author(s). "Skip index: supporting efficient inter-block queries and query authentication on the blockchain." (2023).

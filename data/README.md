@@ -5,4 +5,4 @@ Please refer to <a href="https://doi.org/10.5281/zenodo.7957140">this Zenodo rep
 
 ## References
 
-1. Loporchio, Matteo, et al. "Skip index: supporting efficient inter-block queries and query authentication on the blockchain." (2023).
+1. Anonymous author(s). "Skip index: supporting efficient inter-block queries and query authentication on the blockchain." (2023).

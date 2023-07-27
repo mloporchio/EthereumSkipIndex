@@ -23,8 +23,6 @@ The linked Zenodo repository also includes a detailed description of the data se
 
 The entire project was implemented using Java and Python. Specifically, all code for constructing Bloom filters, BF skip indexes, and for the simulation of search algorithms was written in Java. Python was used for query generation and result analysis. In particular, Jupyter Notebooks were used to produce and visualize the results interactively.
 
-The Javadoc for all Java sources can be generated as discussed in the [Javadoc](###Javadoc) section.
-
 ## Requirements
 
 The code was tested using the following software and libraries, which are required for reproducing all experiments.
@@ -127,6 +125,6 @@ The results of our experiments are reported in Sections 8.1, 8.2 and 8.3 of the 
 
 ## References
 
-1. Loporchio, Matteo, et al. "Skip index: supporting efficient inter-block queries and query authentication on the blockchain." (2023).
+1. Anonymous author(s). "Skip index: supporting efficient inter-block queries and query authentication on the blockchain." (2023).
 2. Bloom, Burton H. "Space/time trade-offs in hash coding with allowable errors." Communications of the ACM 13.7 (1970): 422-426.
 3. Wood, Gavin. "Ethereum: A secure decentralised generalised transaction ledger." Ethereum project yellow paper 151.2014 (2014): 1-32.

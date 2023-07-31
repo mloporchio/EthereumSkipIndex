@@ -1,10 +1,8 @@
-# EthSkip
+# EthereumSkipIndex
 
 ## Description
 
-This GitHub repository contains the code used to generate the results presented in [1].
-
-The paper presents the *BF skip index*, a data structure based on Bloom filters [2] that can be used for answering inter-block queries on blockchains efficiently. 
+This repository includes all code used to produce the results presented in [1]. The paper presents the *BF skip index*, a data structure based on Bloom filters [2] that can be used for answering inter-block queries on blockchains efficiently. 
 
 ## Overview
 

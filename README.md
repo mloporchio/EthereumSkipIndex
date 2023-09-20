@@ -123,6 +123,6 @@ The results of our experiments are reported in Sections 8.1, 8.2 and 8.3 of the 
 
 ## References
 
-1. Anonymous author(s). "Skip index: supporting efficient inter-block queries and query authentication on the blockchain." (2023).
+1. Loporchio, Matteo et al. "Skip index: supporting efficient inter-block queries and query authentication on the blockchain." (2023).
 2. Bloom, Burton H. "Space/time trade-offs in hash coding with allowable errors." Communications of the ACM 13.7 (1970): 422-426.
 3. Wood, Gavin. "Ethereum: A secure decentralised generalised transaction ledger." Ethereum project yellow paper 151.2014 (2014): 1-32.
